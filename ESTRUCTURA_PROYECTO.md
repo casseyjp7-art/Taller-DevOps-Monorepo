@@ -13,7 +13,7 @@ Taller-DevOps-Monorepo-CI/
             ci.yml
     .gitignore
     README.md
-    docker -compose.yaml
+    docker-compose.yaml
     backend/
         Dockerfile
         README.md

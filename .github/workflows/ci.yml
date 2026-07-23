@@ -6,6 +6,11 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: docker compose build
-      - run: docker compose run --rm backend pytest tests
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Construir imágenes con Docker Compose
+        run: docker compose build
+
+      - name: Ejecutar pruebas del Backend con Pytest
+        run: docker compose run --rm backend pytest

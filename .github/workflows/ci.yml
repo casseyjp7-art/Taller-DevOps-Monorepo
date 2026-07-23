@@ -1,0 +1,16 @@
+on: 
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Construir imágenes con Docker Compose
+        run: docker compose build
+
+      - name: Ejecutar pruebas del Backend con Pytest
+        run: docker compose run --rm backend pytest
